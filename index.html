@@ -24,6 +24,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://elfsightcdn.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
   <script type="application/ld+json">
@@ -2794,6 +2795,35 @@
     }
   
 
+    /* OPTIMISATION LEGERE : fluidite sans changer le rendu */
+    img {
+      height: auto;
+    }
+
+    .px-cursor-glow,
+    .px-hero-canvas,
+    .px-v3-energy-canvas,
+    .px-thomas-canvas {
+      contain: layout paint style;
+    }
+
+    .px-tilt,
+    .px-magnetic,
+    .px-reveal {
+      backface-visibility: hidden;
+    }
+
+    @media (max-width: 768px) {
+      .px-cursor-glow {
+        display: none !important;
+      }
+
+      .px-v3-energy-canvas {
+        opacity: .62 !important;
+      }
+    }
+
+
     /* FIX FINAL ODOO / MOBILE / PARTICULES GLOBALES */
     .px-hero-canvas {
       position: fixed !important;
@@ -2882,7 +2912,7 @@
               <span class="px-live-badge"><span class="px-pulse"></span> En atelier</span>
             </figcaption>
             <div class="px-floating-card px-float-a">
-              <strong>4.7/5</strong>
+              <strong>5/5</strong>
               <span>Note Google clients</span>
             </div>
             <div class="px-floating-card px-float-b">
@@ -3137,10 +3167,10 @@
           </article>
 
           <article class="px-proof-card px-tilt px-reveal">
-            <div class="px-proof-number">4.7<small>/5</small></div>
+            <div class="px-proof-number">5<small>/5</small></div>
             <h3>Ils recommandent</h3>
-            <p>Plus de 120 avis clients : la preuve sociale qui rassure avant même la prise de contact.</p>
-            <div class="px-stars" aria-label="Note Google 4.7 sur 5">
+            <p>Avis clients Google : la preuve sociale qui rassure avant même la prise de contact.</p>
+            <div class="px-stars" aria-label="Note Google 5 sur 5">
               <svg viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2Z"/></svg>
               <svg viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2Z"/></svg>
               <svg viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2Z"/></svg>
@@ -3149,7 +3179,7 @@
             </div>
             <div class="px-review-box">
               <script src="https://elfsightcdn.com/platform.js" async></script>
-              <div class="elfsight-app-5f89ed93-18d6-45b4-9700-fc37cce6187b" data-elfsight-app-lazy></div>
+              <div class="elfsight-app-2330df0c-f9cb-4ccc-b6b5-7ab28d74caba" data-elfsight-app-lazy></div>
             </div>
           </article>
         </div>
@@ -3362,7 +3392,9 @@
         if (!canvas || !scene || prefersReducedMotion) return;
 
         const ctx = canvas.getContext('2d');
-        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+        let canvasTop = 0;
+        let lastFrame = 0;
         let width = 0;
         let height = 0;
         let particles = [];
@@ -3504,7 +3536,9 @@
         let height = 0;
         let nodes = [];
         let pointer = { x: window.innerWidth * .72, y: window.innerHeight * .38 };
-        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+        let canvasTop = 0;
+        let lastFrame = 0;
 
         function rand(min, max) {
           return Math.random() * (max - min) + min;
@@ -3514,10 +3548,11 @@
           const rect = canvas.getBoundingClientRect();
           width = rect.width;
           height = rect.height;
+          canvasTop = rect.top + window.scrollY;
           canvas.width = Math.floor(width * dpr);
           canvas.height = Math.floor(height * dpr);
           ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-          const count = width < 720 ? 58 : 112;
+          const count = width < 720 ? 42 : 86;
           nodes = Array.from({ length: count }, function() {
             return {
               x: rand(0, width),
@@ -3535,7 +3570,12 @@
           pointer.y = e.clientY + window.scrollY;
         }, { passive: true });
 
-        function draw() {
+        function draw(timestamp) {
+          requestAnimationFrame(draw);
+          if (document.hidden) return;
+          if (timestamp - lastFrame < 33) return;
+          lastFrame = timestamp;
+
           ctx.clearRect(0, 0, width, height);
           ctx.lineWidth = 1;
 
@@ -3549,7 +3589,7 @@
             if (n.y > height + 20) n.y = -20;
 
             const px = pointer.x;
-            const py = pointer.y - canvas.getBoundingClientRect().top - window.scrollY;
+            const py = pointer.y - canvasTop;
             const pd = Math.hypot(n.x - px, n.y - py);
             if (pd < 180) {
               n.x += (n.x - px) * .003;
@@ -3582,12 +3622,11 @@
             ctx.fill();
           }
 
-          requestAnimationFrame(draw);
         }
 
         resize();
-        draw();
-        window.addEventListener('resize', resize);
+        requestAnimationFrame(draw);
+        window.addEventListener('resize', resize, { passive: true });
       }
 
       function initThomasDisintegration() {
@@ -3596,7 +3635,9 @@
         if (!canvas || !container || prefersReducedMotion) return;
 
         const ctx = canvas.getContext('2d');
-        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+        let canvasTop = 0;
+        let lastFrame = 0;
         let width = 0;
         let height = 0;
         let particles = [];
@@ -3731,8 +3772,12 @@
         ));
       }
 
+      var heightRaf = 0;
+
       function sendHeightToOdoo() {
-        window.requestAnimationFrame(function () {
+        if (heightRaf) return;
+        heightRaf = window.requestAnimationFrame(function () {
+          heightRaf = 0;
           window.parent.postMessage({
             type: 'PX_IFRAME_HEIGHT',
             height: getPhoneXpressHeight()
