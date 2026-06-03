@@ -2,13 +2,14 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#06111c" />
   <meta name="description" content="Phone Xpress à Magalas 34480, 18bis Rue de l'audacieuse : réparation de téléphone, iPhone, Samsung, écrans et batteries par Thomas. Diagnostic offert, devis clair et réparations garanties." />
   <meta name="keywords" content="réparation téléphone Magalas, Phone Xpress Magalas, réparation smartphone 34480, réparation iPhone Magalas, réparation Samsung Magalas, 18bis Rue de l'audacieuse" />
   <link rel="canonical" href="https://phonexpress.odoo.com/" />
   <title>Phone Xpress Magalas | Réparation smartphone 34480</title>
+  <base target="_top" />
 
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="fr_FR" />
@@ -192,6 +193,35 @@
       overflow: hidden;
     }
 
+    /* Compatibilité iframe Odoo / GitHub Pages */
+    html,
+    body {
+      max-width: 100%;
+      overscroll-behavior: none;
+    }
+
+    body {
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .px-page {
+      min-height: 100vh;
+    }
+
+    @media (max-width: 768px) {
+      .px-nav {
+        position: sticky;
+        top: 10px;
+        width: min(100% - 20px, 1160px);
+      }
+
+      .px-shell {
+        width: min(100% - 22px, var(--px-max));
+      }
+    }
+
+
     .px-noise {
       position: fixed;
       inset: 0;
@@ -335,7 +365,7 @@
     }
 
     .px-hero {
-      min-height: 100dvh;
+      min-height: min(100dvh, 920px);
       padding: 78px 0 72px;
       display: grid;
       align-items: center;
@@ -3152,14 +3182,15 @@
         );
 
         const nextHeight = Math.ceil(h) + 30;
-        window.parent.postMessage({
-          frameId: 'px-complete-page',
-          iframeHeight: nextHeight
-        }, '*');
-        window.parent.postMessage({
-          frameId: 'px-complete-page-v3',
-          iframeHeight: nextHeight
-        }, '*');
+        // Envoie la hauteur à Odoo pour supprimer les doubles scrollbars dans l'iframe.
+        ['px-complete-page', 'px-complete-page-v3', 'phone-xpress-odoo'].forEach(function(id) {
+          window.parent.postMessage({
+            type: 'PX_IFRAME_HEIGHT',
+            frameId: id,
+            iframeHeight: nextHeight,
+            height: nextHeight
+          }, '*');
+        });
       }
 
       window.addEventListener('load', function() {
@@ -3167,6 +3198,8 @@
         setTimeout(sendHeight, 300);
         setTimeout(sendHeight, 900);
         setTimeout(sendHeight, 1800);
+        setTimeout(sendHeight, 3200);
+        setTimeout(sendHeight, 5200);
       });
       window.addEventListener('resize', sendHeight);
       if ('ResizeObserver' in window) new ResizeObserver(sendHeight).observe(document.body);
