@@ -2822,6 +2822,48 @@
         display: none;
       }
     }
+    /* FIX ODOO IFRAME - suppression des grands vides */
+html,
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  min-height: auto !important;
+  height: auto !important;
+}
+
+.px-page {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.px-section,
+.px-hero,
+.px-demo,
+.px-v3-lab {
+  min-height: auto !important;
+  padding-top: 35px !important;
+  padding-bottom: 35px !important;
+}
+
+.px-hero {
+  padding-top: 20px !important;
+}
+
+.px-demo-shell,
+.px-v3-shell {
+  min-height: auto !important;
+}
+
+.px-hero-visual,
+.px-demo-shell,
+.px-v3-shell {
+  margin-top: 0 !important;
+}
+
+.px-marquee {
+  margin: 0 !important;
+}
   </style>
 </head>
 
