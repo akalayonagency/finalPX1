@@ -115,10 +115,12 @@
     html {
       scroll-behavior: smooth;
       background: var(--px-bg);
+      width: 100%;
     }
 
     body {
       margin: 0;
+      width: 100%;
       min-width: 320px;
       min-height: 100dvh;
       overflow-x: hidden;
@@ -186,6 +188,7 @@
     .px-page {
       position: relative;
       z-index: 1;
+      width: 100%;
       overflow: hidden;
     }
 
@@ -2435,8 +2438,8 @@
     }
 
     .px-reveal {
-      opacity: 0;
-      transform: translateY(34px) scale(.985);
+      opacity: 1;
+      transform: translateY(0) scale(1);
       transition: opacity .75s var(--px-ease), transform .75s var(--px-ease);
     }
 
@@ -3148,9 +3151,14 @@
           document.documentElement.offsetHeight
         );
 
+        const nextHeight = Math.ceil(h) + 30;
+        window.parent.postMessage({
+          frameId: 'px-complete-page',
+          iframeHeight: nextHeight
+        }, '*');
         window.parent.postMessage({
           frameId: 'px-complete-page-v3',
-          iframeHeight: Math.ceil(h) + 30
+          iframeHeight: nextHeight
         }, '*');
       }
 
