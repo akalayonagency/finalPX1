@@ -2,14 +2,13 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#06111c" />
   <meta name="description" content="Phone Xpress à Magalas 34480, 18bis Rue de l'audacieuse : réparation de téléphone, iPhone, Samsung, écrans et batteries par Thomas. Diagnostic offert, devis clair et réparations garanties." />
   <meta name="keywords" content="réparation téléphone Magalas, Phone Xpress Magalas, réparation smartphone 34480, réparation iPhone Magalas, réparation Samsung Magalas, 18bis Rue de l'audacieuse" />
   <link rel="canonical" href="https://phonexpress.odoo.com/" />
   <title>Phone Xpress Magalas | Réparation smartphone 34480</title>
-  <base target="_top" />
 
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="fr_FR" />
@@ -192,35 +191,6 @@
       width: 100%;
       overflow: hidden;
     }
-
-    /* Compatibilité iframe Odoo / GitHub Pages */
-    html,
-    body {
-      max-width: 100%;
-      overscroll-behavior: none;
-    }
-
-    body {
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-
-    .px-page {
-      min-height: 100vh;
-    }
-
-    @media (max-width: 768px) {
-      .px-nav {
-        position: sticky;
-        top: 10px;
-        width: min(100% - 20px, 1160px);
-      }
-
-      .px-shell {
-        width: min(100% - 22px, var(--px-max));
-      }
-    }
-
 
     .px-noise {
       position: fixed;
@@ -2822,48 +2792,6 @@
         display: none;
       }
     }
-    /* FIX ODOO IFRAME - suppression des grands vides */
-html,
-body {
-  margin: 0 !important;
-  padding: 0 !important;
-  background: transparent !important;
-  min-height: auto !important;
-  height: auto !important;
-}
-
-.px-page {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.px-section,
-.px-hero,
-.px-demo,
-.px-v3-lab {
-  min-height: auto !important;
-  padding-top: 35px !important;
-  padding-bottom: 35px !important;
-}
-
-.px-hero {
-  padding-top: 20px !important;
-}
-
-.px-demo-shell,
-.px-v3-shell {
-  min-height: auto !important;
-}
-
-.px-hero-visual,
-.px-demo-shell,
-.px-v3-shell {
-  margin-top: 0 !important;
-}
-
-.px-marquee {
-  margin: 0 !important;
-}
   </style>
 </head>
 
@@ -3224,15 +3152,14 @@ body {
         );
 
         const nextHeight = Math.ceil(h) + 30;
-        // Envoie la hauteur à Odoo pour supprimer les doubles scrollbars dans l'iframe.
-        ['px-complete-page', 'px-complete-page-v3', 'phone-xpress-odoo'].forEach(function(id) {
-          window.parent.postMessage({
-            type: 'PX_IFRAME_HEIGHT',
-            frameId: id,
-            iframeHeight: nextHeight,
-            height: nextHeight
-          }, '*');
-        });
+        window.parent.postMessage({
+          frameId: 'px-complete-page',
+          iframeHeight: nextHeight
+        }, '*');
+        window.parent.postMessage({
+          frameId: 'px-complete-page-v3',
+          iframeHeight: nextHeight
+        }, '*');
       }
 
       window.addEventListener('load', function() {
@@ -3240,8 +3167,6 @@ body {
         setTimeout(sendHeight, 300);
         setTimeout(sendHeight, 900);
         setTimeout(sendHeight, 1800);
-        setTimeout(sendHeight, 3200);
-        setTimeout(sendHeight, 5200);
       });
       window.addEventListener('resize', sendHeight);
       if ('ResizeObserver' in window) new ResizeObserver(sendHeight).observe(document.body);
@@ -3750,5 +3675,47 @@ body {
       initThomasDisintegration();
     })();
   </script>
+
+
+  <!-- FIX ODOO / GITHUB PAGES : hauteur iframe automatique sans modifier le design -->
+  <script>
+    (function () {
+      function getPhoneXpressHeight() {
+        var page = document.querySelector('.px-page') || document.body;
+        var pageRect = page.getBoundingClientRect();
+
+        return Math.ceil(Math.max(
+          pageRect.height,
+          page.scrollHeight,
+          document.body.scrollHeight,
+          document.documentElement.scrollHeight
+        ));
+      }
+
+      function sendHeightToOdoo() {
+        window.requestAnimationFrame(function () {
+          window.parent.postMessage({
+            type: 'PX_IFRAME_HEIGHT',
+            height: getPhoneXpressHeight()
+          }, '*');
+        });
+      }
+
+      window.addEventListener('load', function () {
+        sendHeightToOdoo();
+        setTimeout(sendHeightToOdoo, 300);
+        setTimeout(sendHeightToOdoo, 900);
+        setTimeout(sendHeightToOdoo, 1800);
+        setTimeout(sendHeightToOdoo, 3200);
+      });
+
+      window.addEventListener('resize', sendHeightToOdoo);
+
+      if ('ResizeObserver' in window) {
+        new ResizeObserver(sendHeightToOdoo).observe(document.body);
+      }
+    })();
+  </script>
+
 </body>
 </html>
