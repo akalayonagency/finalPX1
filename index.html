@@ -2792,57 +2792,48 @@
         display: none;
       }
     }
-    /* FIX MOBILE PHOTO / HERO */
-@media (max-width: 768px) {
-  .px-hero-grid {
-    grid-template-columns: 1fr !important;
-    gap: 20px !important;
-  }
+  
 
-  .px-hero-visual {
-    min-height: auto !important;
-    height: auto !important;
-    display: flex !important;
-    justify-content: center !important;
-    overflow: visible !important;
-  }
+    /* FIX FINAL ODOO / MOBILE / PARTICULES GLOBALES */
+    .px-hero-canvas {
+      position: fixed !important;
+      inset: 0 !important;
+      z-index: 0 !important;
+      width: 100vw !important;
+      height: 100dvh !important;
+      pointer-events: none !important;
+    }
 
-  .px-portrait-card {
-    position: relative !important;
-    left: auto !important;
-    top: auto !important;
-    translate: 0 0 !important;
-    width: min(86vw, 360px) !important;
-    min-width: 0 !important;
-    margin: 20px auto 0 !important;
-    transform: none !important;
-  }
+    .px-page {
+      position: relative !important;
+      z-index: 1 !important;
+    }
 
-  .px-portrait-card img {
-    aspect-ratio: 4 / 5 !important;
-    object-fit: cover !important;
-  }
+    .px-hero h1 {
+      overflow: visible !important;
+      padding-right: 22px !important;
+    }
 
-  .px-phone-pro,
-  .px-orbit,
-  .px-floating-card {
-    display: none !important;
-  }
-}
-    .px-hero h1,
-.px-gradient-text {
-  overflow: visible !important;
-  padding-right: 0.12em !important;
-}
+    .px-gradient-text {
+      display: inline-block !important;
+      overflow: visible !important;
+      padding-right: 22px !important;
+      margin-right: -6px !important;
+    }
 
-@media (max-width: 768px) {
-  .px-hero h1 {
-    font-size: clamp(42px, 15vw, 72px) !important;
-    letter-spacing: -0.05em !important;
-    padding-right: 12px !important;
-  }
-}
-  </style>
+    @media (max-width: 768px) {
+      .px-hero h1 {
+        font-size: clamp(42px, 15vw, 72px) !important;
+        letter-spacing: -0.05em !important;
+        padding-right: 18px !important;
+      }
+
+      .px-gradient-text {
+        padding-right: 18px !important;
+        margin-right: -4px !important;
+      }
+    }
+</style>
 </head>
 
 <body>
@@ -2868,7 +2859,6 @@
               <span>Demander un diagnostic</span>
               <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
             </a>
-            <a class="px-button-secondary px-magnetic" href="#effet">Voir l'effet 30 min</a>
           </div>
 
           <div class="px-micro-trust" aria-label="Points forts Phone Xpress">
@@ -3175,7 +3165,6 @@
             <p>Demandez un diagnostic gratuit, Thomas vous répond avec une solution claire, un prix précis et un délai réaliste.</p>
             <div class="px-hero-actions">
               <a class="px-button px-magnetic" href="https://phonexpress.odoo.com/demande-de-devis" target="_blank" rel="noopener"><span>Demander mon devis</span></a>
-              <a class="px-button-secondary px-magnetic" href="#top">Remonter en haut</a>
             </div>
           </div>
         </div>
@@ -3766,35 +3755,6 @@
       }
     })();
   </script>
-<script>
-document.querySelectorAll('a[href^="#"]').forEach(function(link) {
-  link.addEventListener("click", function(e) {
-    const targetId = this.getAttribute("href");
-    const target = document.querySelector(targetId);
 
-    if (!target) return;
-
-    e.preventDefault();
-
-    const y = target.getBoundingClientRect().top + window.scrollY;
-
-    window.parent.postMessage({
-      type: "PX_SCROLL_TO",
-      y: y
-    }, "*");
-  });
-});
-
-document.querySelectorAll('[data-scroll-top]').forEach(function(btn) {
-  btn.addEventListener("click", function(e) {
-    e.preventDefault();
-
-    window.parent.postMessage({
-      type: "PX_SCROLL_TO",
-      y: 0
-    }, "*");
-  });
-});
-</script>
 </body>
 </html>
