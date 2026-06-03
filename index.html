@@ -5,21 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#06111c" />
-  <meta name="description" content="Réparation téléphone Magalas 34480 chez Phone Xpress, 18bis Rue de l'audacieuse. Thomas repare smartphones, iPhone, Samsung, ecrans et batteries avec diagnostic offert." />
+  <meta name="description" content="Phone Xpress à Magalas 34480, 18bis Rue de l'audacieuse : réparation de téléphone, iPhone, Samsung, écrans et batteries par Thomas. Diagnostic offert, devis clair et réparations garanties." />
   <meta name="keywords" content="réparation téléphone Magalas, Phone Xpress Magalas, réparation smartphone 34480, réparation iPhone Magalas, réparation Samsung Magalas, 18bis Rue de l'audacieuse" />
   <link rel="canonical" href="https://phonexpress.odoo.com/" />
-  <title>Réparation téléphone Magalas 34480 | Phone Xpress</title>
+  <title>Phone Xpress Magalas | Réparation smartphone 34480</title>
 
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:site_name" content="Phone Xpress" />
-  <meta property="og:title" content="Phone Xpress Magalas | Réparation téléphone 34480" />
-  <meta property="og:description" content="Phone Xpress, 18bis Rue de l'audacieuse a Magalas 34480. Reparation smartphone, iPhone, Samsung, diagnostic offert et reparations garanties." />
+  <meta property="og:title" content="Phone Xpress Magalas | Réparation smartphone 34480" />
+  <meta property="og:description" content="Phone Xpress, 18bis Rue de l'audacieuse à Magalas 34480. Réparation téléphone, iPhone, Samsung, diagnostic offert et réparations garanties." />
   <meta property="og:url" content="https://phonexpress.odoo.com/" />
   <meta property="og:image" content="https://phonexpress.odoo.com/thomas.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Réparation téléphone Magalas | Phone Xpress" />
-  <meta name="twitter:description" content="Phone Xpress Magalas 34480, 18bis Rue de l'audacieuse. Diagnostic offert et reparation smartphone rapide par Thomas." />
+  <meta name="twitter:title" content="Phone Xpress Magalas | Réparation smartphone" />
+  <meta name="twitter:description" content="Phone Xpress Magalas 34480, 18bis Rue de l'audacieuse. Diagnostic offert et réparation smartphone rapide par Thomas." />
   <meta name="twitter:image" content="https://phonexpress.odoo.com/thomas.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -33,7 +33,7 @@
     "name": "Phone Xpress",
     "url": "https://phonexpress.odoo.com/",
     "image": "https://phonexpress.odoo.com/thomas.png",
-    "description": "Réparation téléphone Magalas 34480 chez Phone Xpress, 18bis Rue de l'audacieuse. Reparation smartphone express avec diagnostic offert, interventions garanties et suivi direct par Thomas.",
+    "description": "Phone Xpress à Magalas 34480, 18bis Rue de l'audacieuse. Réparation de téléphone, iPhone, Samsung, écrans et batteries avec diagnostic offert, interventions garanties et suivi direct par Thomas.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "18bis Rue de l'audacieuse",
@@ -63,7 +63,7 @@
       },
       {
         "@type": "Offer",
-        "name": "Remplacement ecran smartphone",
+        "name": "Remplacement écran smartphone",
         "priceSpecification": {
           "@type": "PriceSpecification",
           "priceCurrency": "EUR",
@@ -1973,7 +1973,9 @@
     .px-v3-ui strong {
       display: block;
       color: #fff;
-      font-size: 86px;
+      width: max-content;
+      max-width: 100%;
+      font-size: 0;
       line-height: .9;
       letter-spacing: -.08em;
       font-weight: 600;
@@ -1995,14 +1997,6 @@
       text-shadow: 0 0 38px rgba(84, 242, 156, .46), 0 0 70px rgba(66, 220, 255, .28);
     }
 
-    .px-v3-phone-wrap.is-fixed .px-v3-ui strong {
-      font-size: 88px;
-    }
-
-    .px-v3-ui strong {
-      font-size: 0;
-    }
-
     .px-v3-phone-wrap.is-fixed .px-v3-ui strong::before {
       content: "10:30";
       font-size: 88px;
@@ -2015,7 +2009,7 @@
     .px-v3-ui em {
       color: var(--px-cyan);
       font-style: normal;
-      font-size: 13px;
+      font-size: 0;
       font-weight: 1000;
       letter-spacing: .14em;
     }
@@ -2026,6 +2020,7 @@
 
     .px-v3-phone-wrap:not(.is-fixed) .px-v3-ui em::before {
       content: "Écran fissuré";
+      font-size: 13px;
     }
 
     .px-v3-phone-wrap.is-fixed .px-v3-ui em {
@@ -2033,7 +2028,7 @@
     }
 
     .px-v3-phone-wrap.is-fixed .px-v3-ui em::before {
-      content: "Écran restauré";
+      content: "Écran changé";
       font-size: 13px;
     }
 
@@ -2072,8 +2067,8 @@
     }
 
     .px-v3-hud-b {
-      right: -26px;
-      bottom: 190px;
+      right: 38px;
+      bottom: 112px;
       animation-delay: -2.2s;
     }
 
@@ -2725,12 +2720,7 @@
       }
 
       .px-v3-hud {
-        width: 144px;
-        padding: 12px;
-      }
-
-      .px-v3-hud strong {
-        font-size: 12px;
+        display: none;
       }
 
       .px-v3-hud-a {
@@ -2745,31 +2735,42 @@
 
       .px-v3-proof {
         grid-template-columns: 1fr;
+        width: min(100%, 390px);
+        margin-inline: auto;
       }
     }
 
     @media (max-width: 420px) {
+      .px-v3-lab {
+        overflow: hidden;
+      }
+
       .px-v3-scene {
         width: min(96vw, 360px);
-        height: 640px;
+        height: 618px;
       }
 
       .px-v3-phone-wrap {
-        width: min(80vw, 286px);
-        height: 572px;
+        width: min(78vw, 274px);
+        height: 548px;
       }
 
       .px-v3-ui strong::before,
       .px-v3-phone-wrap.is-fixed .px-v3-ui strong::before {
-        font-size: 72px;
+        font-size: clamp(58px, 17vw, 70px);
       }
 
-      .px-v3-hud {
-        width: 132px;
+      .px-v3-ui em::before,
+      .px-v3-phone-wrap.is-fixed .px-v3-ui em::before {
+        font-size: 11px;
       }
 
       .px-v3-trigger {
         bottom: 8px;
+        width: min(82vw, 300px);
+        min-height: 44px;
+        padding-inline: 14px;
+        text-align: center;
       }
     }
 
@@ -2803,12 +2804,11 @@
 
       <div class="px-shell px-hero-grid">
         <div class="px-hero-copy px-reveal">
-          <div class="px-kicker"><span class="px-pulse"></span> Phone Xpress Magalas 34480</div>
           <h1 id="hero-title">À Magalas, votre téléphone revit. <span class="px-gradient-text">Thomas s'en charge.</span></h1>
           <p class="px-hero-lead">
-            Vous cherchez une réparation de téléphone à Magalas 34480 ? Chez Phone Xpress, au 18bis Rue de l'audacieuse, Thomas prend en charge votre smartphone, iPhone ou Samsung avec diagnostic offert et réparations garanties.
+            À Magalas, Phone Xpress remet votre smartphone en état sans détour : diagnostic offert, devis clair, réparations iPhone et Samsung garanties, et un seul interlocuteur, Thomas, au 18bis Rue de l'audacieuse.
           </p>
-          <p class="px-local-signal">Phone Xpress Magalas 34480 - 18bis Rue de l'audacieuse</p>
+          <p class="px-local-signal">Atelier Phone Xpress - Magalas 34480 - 18bis Rue de l'audacieuse</p>
 
           <div class="px-hero-actions">
             <a class="px-button px-magnetic" href="https://phonexpress.odoo.com/demande-de-devis" target="_blank" rel="noopener">
@@ -2821,15 +2821,15 @@
           <div class="px-micro-trust" aria-label="Points forts Phone Xpress">
             <div class="px-trust-chip"><strong>Magalas 34480</strong><span>18bis Rue de l'audacieuse</span></div>
             <div class="px-trust-chip"><strong>Diagnostic offert</strong><span>Devis clair avant intervention</span></div>
-            <div class="px-trust-chip"><strong>Sans intermediaire</strong><span>Thomas suit votre appareil</span></div>
+            <div class="px-trust-chip"><strong>Sans intermédiaire</strong><span>Thomas suit votre appareil</span></div>
           </div>
         </div>
 
-        <div class="px-hero-visual px-reveal" aria-label="Thomas et telephone Phone Xpress">
+        <div class="px-hero-visual px-reveal" aria-label="Thomas et téléphone Phone Xpress">
           <div class="px-orbit" aria-hidden="true"></div>
 
           <figure class="px-portrait-card px-tilt">
-            <img src="thomas.png" alt="Thomas, technicien Phone Xpress, dans son atelier de reparation smartphone" width="660" height="825" fetchpriority="high" decoding="async" onerror="this.closest('.px-portrait-card').classList.add('is-fallback'); this.remove();" />
+            <img src="thomas.png" alt="Thomas, technicien Phone Xpress, dans son atelier de réparation smartphone" width="660" height="825" fetchpriority="high" decoding="async" onerror="this.closest('.px-portrait-card').classList.add('is-fallback'); this.remove();" />
             <canvas class="px-thomas-canvas" id="pxThomasParticles" aria-hidden="true"></canvas>
             <figcaption class="px-portrait-caption">
               <span>
@@ -2853,52 +2853,51 @@
 
     <section class="px-marquee" aria-label="Services Phone Xpress">
       <div class="px-marquee-track">
-        <span><i></i> Ecran iPhone</span><span><i></i> Batterie Samsung</span><span><i></i> Diagnostic offert</span><span><i></i> Vitre arriere</span><span><i></i> Connecteur de charge</span><span><i></i> Sans rendez-vous</span>
-        <span><i></i> Ecran iPhone</span><span><i></i> Batterie Samsung</span><span><i></i> Diagnostic offert</span><span><i></i> Vitre arriere</span><span><i></i> Connecteur de charge</span><span><i></i> Sans rendez-vous</span>
+        <span><i></i> Écran iPhone</span><span><i></i> Batterie Samsung</span><span><i></i> Diagnostic offert</span><span><i></i> Vitre arrière</span><span><i></i> Connecteur de charge</span><span><i></i> Sans rendez-vous</span>
+        <span><i></i> Écran iPhone</span><span><i></i> Batterie Samsung</span><span><i></i> Diagnostic offert</span><span><i></i> Vitre arrière</span><span><i></i> Connecteur de charge</span><span><i></i> Sans rendez-vous</span>
       </div>
     </section>
 
     <section class="px-section" id="engagements" aria-labelledby="engagements-title">
       <div class="px-shell">
         <header class="px-section-header px-reveal">
-          <div class="px-pill"><span class="px-pulse"></span> Nos engagements</div>
           <h2 id="engagements-title">Un service local qui inspire confiance.</h2>
-          <p>Des preuves simples, lisibles, et une promesse claire: votre smartphone reste entre les mains de Thomas, avec une intervention precise et garantie.</p>
+          <p>Des preuves simples, lisibles, et une promesse claire : votre smartphone reste entre les mains de Thomas, avec une intervention précise et garantie.</p>
         </header>
 
         <div class="px-feature-grid">
           <article class="px-feature-card px-tilt px-reveal">
             <span class="px-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.66 5.66l-5.3 5.3a2.2 2.2 0 0 0 3.11 3.11l5.3-5.3a4 4 0 0 0 5.66-5.66l-2.83 2.83-3.1-3.1 2.82-2.84Z"/></svg></span>
-            <h3>Pieces premium</h3>
-            <p>Pieces d'origine ou equivalent OEM, controlees avant pose. Aucun compromis sur le tactile, l'affichage et la fiabilite.</p>
-            <span class="px-feature-badge">Qualite</span>
+            <h3>Pièces premium</h3>
+            <p>Pièces d'origine ou équivalent OEM, contrôlées avant pose. Aucun compromis sur le tactile, l'affichage et la fiabilité.</p>
+            <span class="px-feature-badge">Qualité</span>
           </article>
 
           <article class="px-feature-card px-tilt px-reveal">
             <span class="px-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-5"/></svg></span>
             <h3>Garantie incluse</h3>
-            <p>Chaque reparation est couverte. Si une piece presente un defaut, Phone Xpress s'en occupe proprement.</p>
+            <p>Chaque réparation est couverte. Si une pièce présente un défaut, Phone Xpress s'en occupe proprement.</p>
             <span class="px-feature-badge">Garanti</span>
           </article>
 
           <article class="px-feature-card px-tilt px-reveal">
             <span class="px-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h8l-1 8 11-14h-8l1-6Z"/></svg></span>
             <h3>Sans rendez-vous</h3>
-            <p>Passez directement en atelier. Thomas diagnostique, explique et repare quand c'est possible sur place.</p>
+            <p>Passez directement en atelier. Thomas diagnostique, explique et répare quand c'est possible sur place.</p>
             <span class="px-feature-badge">Express</span>
           </article>
 
           <article class="px-feature-card px-tilt px-reveal">
             <span class="px-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
-            <h3>Donnees protegees</h3>
-            <p>Votre telephone ne circule pas de main en main. Un suivi direct limite les risques et simplifie la communication.</p>
+            <h3>Données protégées</h3>
+            <p>Votre téléphone ne circule pas de main en main. Un suivi direct limite les risques et simplifie la communication.</p>
             <span class="px-feature-badge">Confidentiel</span>
           </article>
 
           <article class="px-feature-card px-tilt px-reveal">
             <span class="px-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 8h14"/><path d="M5 16h14"/><path d="M7 21h10"/><path d="M7 3h10"/></svg></span>
-            <h3>Accessoires francais</h3>
-            <p>Protection, cables et accessoires issus d'un fournisseur francais pour garder la chaine courte et fiable.</p>
+            <h3>Accessoires français</h3>
+            <p>Protection, câbles et accessoires issus d'un fournisseur français pour garder la chaîne courte et fiable.</p>
             <span class="px-feature-badge">Circuit court</span>
           </article>
         </div>
@@ -2908,18 +2907,17 @@
     <section class="px-section px-demo px-v3-lab" id="effet" aria-labelledby="effet-title">
       <div class="px-shell px-v3-shell">
         <div class="px-v3-copy px-reveal">
-          <div class="px-pill"><span class="px-pulse"></span> Effet PhoneXpress 3.0</div>
           <h2 id="effet-title">Diagnostic énergétique. Réparation instantanée.</h2>
-          <p>La V3 transforme la réparation en séquence visuelle: scan de l'écran cassé, charge lumineuse, éclats qui se recollent, puis écran restauré comme neuf.</p>
+          <p>Un écran cassé ne doit pas bloquer votre journée. Thomas examine votre smartphone, confirme la pièce adaptée et peut changer l'écran rapidement, avec un diagnostic offert et un délai clair avant intervention.</p>
 
-          <div class="px-v3-steps" aria-label="Etapes de réparation Phone Xpress">
-            <div><span>01</span><strong>Scan fissures</strong><small>Diagnostic offert</small></div>
+          <div class="px-v3-steps" aria-label="Étapes de réparation Phone Xpress">
+            <div><span>01</span><strong>Examen du Smartphone</strong><small>Diagnostic offert</small></div>
             <div><span>02</span><strong>Remise sous tension</strong><small>Pièces premium</small></div>
-            <div><span>03</span><strong>Écran restauré</strong><small>30 min max</small></div>
+            <div><span>03</span><strong>Écran changé</strong><small>30 min max</small></div>
           </div>
         </div>
 
-        <div class="px-repair-scene px-v3-scene px-reveal" id="pxRepairScene" role="button" tabindex="0" aria-label="Déclencher l'effet de réparation énergétique Phone Xpress">
+        <div class="px-repair-scene px-v3-scene px-reveal" id="pxRepairScene" role="button" tabindex="0" aria-pressed="false" aria-label="Déclencher l'effet de réparation énergétique Phone Xpress">
           <canvas class="px-v3-energy-canvas" id="pxV3EnergyCanvas" aria-hidden="true"></canvas>
           <div class="px-v3-portal" aria-hidden="true"></div>
           <div class="px-v3-grid-floor" aria-hidden="true"></div>
@@ -2961,8 +2959,8 @@
 
                   <div class="px-v3-ui">
                     <span class="px-v3-chip">Phone Xpress</span>
-                    <strong>10:30</strong>
-                    <em>Écran restauré</em>
+                    <strong aria-label="Heure de réparation"></strong>
+                    <em aria-label="État de l'écran"></em>
                   </div>
                 </div>
               </div>
@@ -3003,9 +3001,8 @@
     <section class="px-section" id="tarifs" aria-labelledby="tarifs-title">
       <div class="px-shell">
         <header class="px-section-header px-reveal">
-          <div class="px-pill"><span class="px-pulse"></span> Nos tarifs</div>
           <h2 id="tarifs-title">Des prix clairs avant intervention.</h2>
-          <p>Diagnostic offert, devis precise et reparation garantie. Les prix ci-dessous sont des tarifs de depart selon modele et disponibilite piece.</p>
+          <p>Diagnostic offert, devis précis et réparation garantie. Les prix ci-dessous sont des tarifs de départ selon modèle et disponibilité pièce.</p>
         </header>
 
         <div class="px-price-grid">
@@ -3017,10 +3014,10 @@
               </div>
               <span class="px-price-badge">Garanti</span>
             </div>
-            <div class="px-price-row"><span>Ecran</span><span>a partir de 49€</span></div>
-            <div class="px-price-row"><span>Batterie</span><span>a partir de 19€</span></div>
-            <div class="px-price-row"><span>Vitre arriere</span><span>a partir de 69€</span></div>
-            <div class="px-price-row"><span>Connecteur de charge</span><span>a partir de 29€</span></div>
+            <div class="px-price-row"><span>Écran</span><span>à partir de 49€</span></div>
+            <div class="px-price-row"><span>Batterie</span><span>à partir de 19€</span></div>
+            <div class="px-price-row"><span>Vitre arrière</span><span>à partir de 69€</span></div>
+            <div class="px-price-row"><span>Connecteur de charge</span><span>à partir de 29€</span></div>
             <div class="px-price-row"><span>Diagnostic</span><span>Gratuit</span></div>
           </article>
 
@@ -3032,10 +3029,10 @@
               </div>
               <span class="px-price-badge">Express</span>
             </div>
-            <div class="px-price-row"><span>Ecran</span><span>a partir de 49€</span></div>
-            <div class="px-price-row"><span>Batterie</span><span>a partir de 29€</span></div>
-            <div class="px-price-row"><span>Vitre arriere</span><span>a partir de 19€</span></div>
-            <div class="px-price-row"><span>Connecteur de charge</span><span>a partir de 19€</span></div>
+            <div class="px-price-row"><span>Écran</span><span>à partir de 49€</span></div>
+            <div class="px-price-row"><span>Batterie</span><span>à partir de 29€</span></div>
+            <div class="px-price-row"><span>Vitre arrière</span><span>à partir de 19€</span></div>
+            <div class="px-price-row"><span>Connecteur de charge</span><span>à partir de 19€</span></div>
             <div class="px-price-row"><span>Diagnostic</span><span>Gratuit</span></div>
           </article>
 
@@ -3043,13 +3040,13 @@
             <div class="px-device-head">
               <div class="px-device-title">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M11 17h2"/></svg>
-                <h3>Tablettes et connectes</h3>
+                <h3>Tablettes et connectés</h3>
               </div>
               <span class="px-price-badge">Devis clair</span>
             </div>
-            <div class="px-price-row"><span>Ecran tablette</span><span>a partir de 49€</span></div>
-            <div class="px-price-row"><span>Montre connectee</span><span>a partir de 69€</span></div>
-            <div class="px-price-row"><span>Trottinette electrique</span><span>a partir de 19€</span></div>
+            <div class="px-price-row"><span>Écran tablette</span><span>à partir de 49€</span></div>
+            <div class="px-price-row"><span>Montre connectée</span><span>à partir de 69€</span></div>
+            <div class="px-price-row"><span>Trottinette électrique</span><span>à partir de 19€</span></div>
             <div class="px-price-row"><span>Diagnostic</span><span>Gratuit</span></div>
           </article>
 
@@ -3061,8 +3058,8 @@
               </div>
               <span class="px-price-badge">Multi-marques</span>
             </div>
-            <div class="px-price-row"><span>Xiaomi / Oppo / OnePlus</span><span>a partir de 49€</span></div>
-            <div class="px-price-row"><span>Huawei / Honor</span><span>a partir de 49€</span></div>
+            <div class="px-price-row"><span>Xiaomi / Oppo / OnePlus</span><span>à partir de 49€</span></div>
+            <div class="px-price-row"><span>Huawei / Honor</span><span>à partir de 49€</span></div>
             <div class="px-price-row"><span>Toute autre marque</span><span>Devis gratuit</span></div>
             <div class="px-price-row"><span>Diagnostic</span><span>Gratuit</span></div>
           </article>
@@ -3073,23 +3070,22 @@
     <section class="px-section px-proof" id="avis" aria-labelledby="avis-title">
       <div class="px-shell">
         <header class="px-section-header px-reveal">
-          <div class="px-pill"><span class="px-pulse"></span> Preuves clients</div>
-          <h2 id="avis-title">La difference se voit dans les avis.</h2>
-          <p>La vitesse attire. La proprete et le suivi font revenir. Phone Xpress mise sur une relation directe et des preuves simples.</p>
+          <h2 id="avis-title">La différence se voit dans les avis.</h2>
+          <p>La vitesse attire. La propreté et le suivi font revenir. Phone Xpress mise sur une relation directe et des preuves simples.</p>
         </header>
 
         <div class="px-proof-grid">
           <article class="px-proof-card px-tilt px-reveal">
             <div class="px-proof-number">+100</div>
             <h3>Clients satisfaits</h3>
-            <p>Des reparations propres, expliquees, avec une vraie attention portee a chaque appareil.</p>
+            <p>Des réparations propres, expliquées, avec une vraie attention portée à chaque appareil.</p>
             <div class="px-progress"><span style="--w: 88%"></span></div>
           </article>
 
           <article class="px-proof-card main px-tilt px-reveal">
             <div class="px-proof-number">30<small>min</small></div>
-            <h3>Un delai moyen qui change tout</h3>
-            <p>Ecran, batterie, vitre arriere, diagnostic: Thomas va droit au probleme pour vous faire gagner du temps.</p>
+            <h3>Un délai moyen qui change tout</h3>
+            <p>Écran, batterie, vitre arrière, diagnostic : Thomas va droit au problème pour vous faire gagner du temps.</p>
             <div class="px-hero-actions">
               <a class="px-button px-magnetic" href="https://phonexpress.odoo.com/demande-de-devis" target="_blank" rel="noopener"><span>Lancer le diagnostic</span></a>
               <a class="px-button-secondary px-magnetic" href="#tarifs">Voir les tarifs</a>
@@ -3100,7 +3096,7 @@
           <article class="px-proof-card px-tilt px-reveal">
             <div class="px-proof-number">4.7<small>/5</small></div>
             <h3>Ils recommandent</h3>
-            <p>Plus de 120 avis clients: la preuve sociale qui rassure avant meme la prise de contact.</p>
+            <p>Plus de 120 avis clients : la preuve sociale qui rassure avant même la prise de contact.</p>
             <div class="px-stars" aria-label="Note Google 4.7 sur 5">
               <svg viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2Z"/></svg>
               <svg viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2Z"/></svg>
@@ -3121,9 +3117,9 @@
       <div class="px-shell">
         <div class="px-final-panel px-reveal">
           <div class="px-final-content">
-            <div class="px-pill"><span class="px-pulse"></span> Pret pour la reparation</div>
-            <h2 id="final-title">Votre smartphone merite mieux qu'une approximation.</h2>
-            <p>Demandez un diagnostic gratuit, Thomas vous repond avec une solution claire, un prix precis et un delai realiste.</p>
+            <div class="px-pill"><span class="px-pulse"></span> Prêt pour la réparation</div>
+            <h2 id="final-title">Votre smartphone mérite mieux qu'une approximation.</h2>
+            <p>Demandez un diagnostic gratuit, Thomas vous répond avec une solution claire, un prix précis et un délai réaliste.</p>
             <div class="px-hero-actions">
               <a class="px-button px-magnetic" href="https://phonexpress.odoo.com/demande-de-devis" target="_blank" rel="noopener"><span>Demander mon devis</span></a>
               <a class="px-button-secondary px-magnetic" href="#top">Remonter en haut</a>
@@ -3136,7 +3132,7 @@
 
   <noscript>
     <p style="padding: 16px; margin: 0; background: #fff; color: #06111c; font-weight: 700;">
-      Phone Xpress Magalas 34480, 18bis Rue de l'audacieuse, repare telephones, smartphones, iPhone, Samsung, tablettes et appareils connectes. Diagnostic offert et devis rapide.
+      Phone Xpress Magalas 34480, 18bis Rue de l'audacieuse, répare téléphones, smartphones, iPhone, Samsung, tablettes et appareils connectés. Diagnostic offert et devis rapide.
     </p>
   </noscript>
 
@@ -3153,7 +3149,7 @@
         );
 
         window.parent.postMessage({
-          frameId: 'px-complete-page-v2',
+          frameId: 'px-complete-page-v3',
           iframeHeight: Math.ceil(h) + 30
         }, '*');
       }
@@ -3252,15 +3248,17 @@
 
       function triggerRepair() {
         if (!repairScene || !repairCard) return;
-        repairCard.classList.toggle('is-fixed');
+        const fixed = !repairCard.classList.contains('is-fixed');
+        repairCard.classList.toggle('is-fixed', fixed);
+        repairScene.classList.toggle('is-fixed', fixed);
+        repairScene.setAttribute('aria-pressed', String(fixed));
         repairScene.classList.remove('do-flash');
         void repairScene.offsetWidth;
         repairScene.classList.add('do-flash');
 
-        const fixed = repairCard.classList.contains('is-fixed');
         if (demoHint) demoHint.textContent = fixed
-          ? '10:00 -> 10:30 : ecran restaure. Clique pour revoir l avant.'
-          : 'Clique pour declencher l effet PhoneXpress.';
+          ? 'Écran changé - revoir le diagnostic'
+          : 'Lancer la réparation';
 
         if (fixed && !prefersReducedMotion) burstShards(repairScene);
         setTimeout(sendHeight, 320);
@@ -3277,13 +3275,14 @@
       }
 
       function burstShards(root) {
-        for (let i = 0; i < 18; i++) {
+        for (let i = 0; i < 34; i++) {
           const shard = document.createElement('span');
-          const size = 8 + Math.random() * 18;
+          const size = 6 + Math.random() * 20;
           const x = 50 + (Math.random() - .5) * 25;
           const y = 46 + (Math.random() - .5) * 28;
-          const dx = (Math.random() - .5) * 360;
-          const dy = (Math.random() - .8) * 320;
+          const dx = (Math.random() - .5) * 430;
+          const dy = (Math.random() - .86) * 390;
+          const hue = Math.random() > .55 ? '66,220,255' : '64,255,166';
           shard.style.cssText = [
             'position:absolute',
             'left:' + x + '%',
@@ -3293,11 +3292,11 @@
             'z-index:30',
             'pointer-events:none',
             'clip-path:polygon(12% 0,100% 30%,68% 100%,0 70%)',
-            'background:linear-gradient(135deg,rgba(255,255,255,.9),rgba(66,220,255,.2))',
+            'background:linear-gradient(135deg,rgba(255,255,255,.94),rgba(' + hue + ',.22))',
             'border:1px solid rgba(255,255,255,.55)',
-            'filter:drop-shadow(0 0 10px rgba(66,220,255,.55))',
+            'filter:drop-shadow(0 0 12px rgba(' + hue + ',.6))',
             'transform:translate(-50%,-50%) rotate(' + (Math.random() * 120) + 'deg)',
-            'transition:transform .9s cubic-bezier(.19,1,.22,1), opacity .9s ease'
+            'transition:transform 1.05s cubic-bezier(.19,1,.22,1), opacity 1.05s ease'
           ].join(';');
           root.appendChild(shard);
 
@@ -3306,7 +3305,147 @@
             shard.style.opacity = '0';
           });
 
-          setTimeout(function() { shard.remove(); }, 950);
+          setTimeout(function() { shard.remove(); }, 1120);
+        }
+      }
+
+      function initV3EnergyCanvas() {
+        const canvas = document.getElementById('pxV3EnergyCanvas');
+        const scene = document.getElementById('pxRepairScene');
+        if (!canvas || !scene || prefersReducedMotion) return;
+
+        const ctx = canvas.getContext('2d');
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        let width = 0;
+        let height = 0;
+        let particles = [];
+        let time = 0;
+        let pointer = { x: .5, y: .5, active: false };
+
+        function rand(min, max) {
+          return Math.random() * (max - min) + min;
+        }
+
+        function resize() {
+          const rect = canvas.getBoundingClientRect();
+          width = Math.max(1, rect.width);
+          height = Math.max(1, rect.height);
+          canvas.width = Math.floor(width * dpr);
+          canvas.height = Math.floor(height * dpr);
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+          const count = width < 420 ? 86 : 138;
+          particles = Array.from({ length: count }, function(_, index) {
+            const ring = index / count;
+            return {
+              angle: rand(0, Math.PI * 2),
+              radius: rand(width * .16, width * .48),
+              speed: rand(.0025, .008),
+              drift: rand(-.35, .35),
+              size: rand(.8, 3.2),
+              alpha: rand(.22, .88),
+              charge: Math.random() > .54 ? 1 : 0,
+              phase: rand(0, Math.PI * 2),
+              ring
+            };
+          });
+        }
+
+        function drawBeam(cx, cy, angle, length, alpha, fixed) {
+          const sx = cx + Math.cos(angle) * length;
+          const sy = cy + Math.sin(angle) * length * .68;
+          const gradient = ctx.createLinearGradient(sx, sy, cx, cy);
+          gradient.addColorStop(0, 'rgba(66,220,255,0)');
+          gradient.addColorStop(.55, fixed ? 'rgba(64,255,166,' + alpha + ')' : 'rgba(66,220,255,' + alpha + ')');
+          gradient.addColorStop(1, 'rgba(255,255,255,' + (alpha * 1.2) + ')');
+          ctx.strokeStyle = gradient;
+          ctx.lineWidth = fixed ? 1.6 : 1;
+          ctx.beginPath();
+          ctx.moveTo(sx, sy);
+          ctx.quadraticCurveTo((sx + cx) / 2 + Math.sin(time * .02 + angle) * 22, (sy + cy) / 2, cx, cy);
+          ctx.stroke();
+        }
+
+        function draw() {
+          time += 1;
+          ctx.clearRect(0, 0, width, height);
+
+          const fixed = scene.classList.contains('is-fixed');
+          const cx = width * (.5 + (pointer.x - .5) * .04);
+          const cy = height * (.47 + (pointer.y - .5) * .035);
+          const pulse = .5 + Math.sin(time * .045) * .5;
+
+          ctx.save();
+          ctx.globalCompositeOperation = 'lighter';
+
+          for (let i = 0; i < 11; i++) {
+            drawBeam(cx, cy, (i / 11) * Math.PI * 2 + time * .004, width * (.34 + i * .018), .035 + pulse * .05, fixed);
+          }
+
+          for (let ring = 0; ring < 4; ring++) {
+            const radius = width * (.14 + ring * .075) + pulse * 10;
+            ctx.strokeStyle = fixed
+              ? 'rgba(64,255,166,' + (.12 - ring * .018) + ')'
+              : 'rgba(66,220,255,' + (.1 - ring * .016) + ')';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.ellipse(cx, cy, radius, radius * .42, Math.sin(time * .008) * .2, 0, Math.PI * 2);
+            ctx.stroke();
+          }
+
+          particles.forEach(function(p) {
+            p.angle += p.speed * (fixed ? 1.8 : 1);
+            p.phase += .018;
+            const repairPull = fixed ? Math.max(0, 1 - p.ring) * 34 : 0;
+            const orbit = p.radius - repairPull + Math.sin(p.phase) * 10;
+            const x = cx + Math.cos(p.angle) * orbit + p.drift * Math.sin(time * .012 + p.phase) * 18;
+            const y = cy + Math.sin(p.angle) * orbit * .58 + Math.cos(p.phase) * 9;
+            const alpha = p.alpha * (fixed ? .9 : .58) * (.55 + pulse * .45);
+            const color = p.charge
+              ? 'rgba(64,255,166,' + alpha + ')'
+              : 'rgba(66,220,255,' + alpha + ')';
+
+            ctx.fillStyle = color;
+            ctx.shadowColor = color;
+            ctx.shadowBlur = fixed ? 18 : 10;
+
+            if (p.charge && fixed) {
+              ctx.save();
+              ctx.translate(x, y);
+              ctx.rotate(p.angle + time * .02);
+              ctx.fillRect(-p.size * 2.4, -.7, p.size * 4.8, 1.4);
+              ctx.restore();
+            } else {
+              ctx.beginPath();
+              ctx.arc(x, y, p.size, 0, Math.PI * 2);
+              ctx.fill();
+            }
+          });
+
+          ctx.restore();
+          requestAnimationFrame(draw);
+        }
+
+        scene.addEventListener('pointermove', function(e) {
+          const rect = scene.getBoundingClientRect();
+          pointer.x = (e.clientX - rect.left) / rect.width;
+          pointer.y = (e.clientY - rect.top) / rect.height;
+          pointer.active = true;
+        }, { passive: true });
+
+        scene.addEventListener('pointerleave', function() {
+          pointer.active = false;
+          pointer.x = .5;
+          pointer.y = .5;
+        });
+
+        resize();
+        draw();
+
+        if ('ResizeObserver' in window) {
+          new ResizeObserver(resize).observe(scene);
+        } else {
+          window.addEventListener('resize', resize);
         }
       }
 
@@ -3524,6 +3663,7 @@
       }
 
       initHeroCanvas();
+      initV3EnergyCanvas();
       initThomasDisintegration();
     })();
   </script>
