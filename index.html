@@ -2792,6 +2792,43 @@
         display: none;
       }
     }
+    /* FIX MOBILE PHOTO / HERO */
+@media (max-width: 768px) {
+  .px-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .px-hero-visual {
+    min-height: auto !important;
+    height: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    overflow: visible !important;
+  }
+
+  .px-portrait-card {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    translate: 0 0 !important;
+    width: min(86vw, 360px) !important;
+    min-width: 0 !important;
+    margin: 20px auto 0 !important;
+    transform: none !important;
+  }
+
+  .px-portrait-card img {
+    aspect-ratio: 4 / 5 !important;
+    object-fit: cover !important;
+  }
+
+  .px-phone-pro,
+  .px-orbit,
+  .px-floating-card {
+    display: none !important;
+  }
+}
   </style>
 </head>
 
