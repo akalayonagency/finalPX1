@@ -2863,6 +2863,422 @@
         margin-right: -4px !important;
       }
     }
+
+    /* ADDON HYDROGEL PROMO : section autonome, code d'origine preserve */
+    .pxh-hydrogel {
+      position: relative;
+      padding: clamp(56px, 8vw, 104px) 0 clamp(64px, 8vw, 112px);
+      isolation: isolate;
+    }
+
+    .pxh-hydrogel::before {
+      content: none;
+    }
+
+    .pxh-panel {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, .86fr) minmax(330px, .9fr);
+      gap: clamp(26px, 4vw, 56px);
+      align-items: center;
+      min-height: 620px;
+      padding: clamp(12px, 2.4vw, 24px) 0;
+      border: 0;
+      border-radius: 0;
+      overflow: visible;
+      background: transparent;
+      box-shadow: none;
+      backdrop-filter: none;
+    }
+
+    .pxh-panel::after {
+      content: none;
+    }
+
+    .pxh-copy,
+    .pxh-visual {
+      position: relative;
+      z-index: 2;
+    }
+
+    .pxh-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      min-height: 38px;
+      margin: 0 0 18px;
+      padding: 8px 13px;
+      border: 1px solid rgba(255, 209, 102, .42);
+      border-radius: 999px;
+      background: rgba(255, 209, 102, .08);
+      color: #fff4cf;
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08), 0 0 28px rgba(255, 209, 102, .1);
+    }
+
+    .pxh-title {
+      max-width: 640px;
+      margin: 0;
+      color: #fff;
+      font-size: clamp(44px, 6.2vw, 88px);
+      line-height: .88;
+      font-weight: 950;
+      letter-spacing: -.07em;
+      text-transform: uppercase;
+    }
+
+    .pxh-title span {
+      display: block;
+      color: transparent;
+      background: linear-gradient(104deg, #fff 0 18%, var(--px-cyan) 42%, var(--px-blue) 72%, #fff 100%);
+      background-size: 190% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: textSheen 7s ease-in-out infinite;
+    }
+
+    .pxh-lead {
+      max-width: 590px;
+      margin: 22px 0 0;
+      color: var(--px-soft);
+      font-size: clamp(17px, 1.6vw, 21px);
+      line-height: 1.58;
+      font-weight: 650;
+    }
+
+    .pxh-offer {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      width: fit-content;
+      max-width: 100%;
+      margin-top: 28px;
+      padding: 14px 18px;
+      border: 1px solid rgba(255, 209, 102, .5);
+      border-radius: 22px;
+      background:
+        linear-gradient(135deg, rgba(255, 209, 102, .18), rgba(255, 159, 28, .08)),
+        rgba(2, 7, 17, .62);
+      box-shadow: 0 18px 54px rgba(0, 0, 0, .24), 0 0 34px rgba(255, 209, 102, .1);
+    }
+
+    .pxh-current-price {
+      color: var(--px-warning);
+      font-size: clamp(50px, 6vw, 82px);
+      line-height: .82;
+      font-weight: 1000;
+      letter-spacing: -.06em;
+      font-variant-numeric: tabular-nums;
+      text-shadow: 0 0 28px rgba(255, 209, 102, .24);
+    }
+
+    .pxh-offer-copy {
+      display: grid;
+      gap: 4px;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 950;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .pxh-old-price {
+      width: fit-content;
+      color: rgba(255, 255, 255, .58);
+      font-size: 17px;
+      text-decoration: line-through;
+    }
+
+    .pxh-duration {
+      color: #fff1c2;
+      font-size: 13px;
+    }
+
+    .pxh-benefits {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      max-width: 650px;
+      margin-top: 26px;
+    }
+
+    .pxh-benefit {
+      min-height: 84px;
+      padding: 14px;
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .045);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06);
+    }
+
+    .pxh-benefit strong {
+      display: block;
+      color: #fff;
+      font-size: 14px;
+      line-height: 1.15;
+      text-transform: uppercase;
+    }
+
+    .pxh-benefit span {
+      display: block;
+      margin-top: 6px;
+      color: var(--px-muted);
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .pxh-visual {
+      justify-self: end;
+      width: min(100%, 460px);
+    }
+
+    .pxh-visual::before {
+      content: "";
+      position: absolute;
+      inset: -18% -20%;
+      z-index: -1;
+      pointer-events: none;
+      background: radial-gradient(circle at 54% 46%, rgba(66, 220, 255, .18), transparent 64%);
+      filter: blur(8px);
+    }
+
+    .pxh-figure {
+      position: relative;
+      margin: 0;
+      min-height: 560px;
+      border-radius: 30px;
+      overflow: hidden;
+      border: 0;
+      background:
+        radial-gradient(circle at 50% 22%, rgba(66, 220, 255, .2), transparent 36%),
+        #06111c;
+      box-shadow:
+        0 34px 90px rgba(0, 0, 0, .42),
+        inset 1px 0 0 rgba(255, 255, 255, .13),
+        inset -1px 0 0 rgba(255, 255, 255, .13),
+        inset 0 -1px 0 rgba(255, 255, 255, .13);
+      transform: rotateY(-5deg) rotateZ(1.4deg);
+      transform-style: preserve-3d;
+    }
+
+    .pxh-figure img {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 57% top;
+      filter: saturate(1.08) contrast(1.04);
+      -webkit-mask-image: linear-gradient(180deg, transparent 0, rgba(0, 0, 0, .2) 4%, #000 14%, #000 100%);
+      mask-image: linear-gradient(180deg, transparent 0, rgba(0, 0, 0, .2) 4%, #000 14%, #000 100%);
+    }
+
+    .pxh-figure::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 4;
+      pointer-events: none;
+      background:
+        linear-gradient(125deg, rgba(255, 255, 255, .2), transparent 28%, rgba(66, 220, 255, .12) 72%, transparent),
+        linear-gradient(0deg, rgba(2, 7, 17, .16), transparent 45%, rgba(255, 255, 255, .04));
+      mix-blend-mode: screen;
+      -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 16%, #000 100%);
+      mask-image: linear-gradient(180deg, transparent 0, #000 16%, #000 100%);
+    }
+
+    .pxh-lightning {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      mix-blend-mode: screen;
+      opacity: .82;
+      -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 14%, #000 100%);
+      mask-image: linear-gradient(180deg, transparent 0, #000 14%, #000 100%);
+    }
+
+    .pxh-lightning svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .pxh-trace-soft,
+    .pxh-trace-core,
+    .pxh-trace-runner {
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      vector-effect: non-scaling-stroke;
+    }
+
+    .pxh-trace-soft {
+      stroke: rgba(66, 220, 255, .2);
+      stroke-width: 15;
+      filter: url(#pxhElectricBlur);
+      opacity: .7;
+      animation: pxhGlowBreath 4.8s ease-in-out infinite;
+    }
+
+    .pxh-trace-core {
+      stroke: rgba(121, 238, 255, .5);
+      stroke-width: 2.2;
+      filter: url(#pxhElectricGlow);
+      opacity: .56;
+      animation: pxhGlowBreath 3.8s ease-in-out infinite reverse;
+    }
+
+    .pxh-trace-runner {
+      stroke: #f7fbff;
+      stroke-width: 3.2;
+      stroke-dasharray: 74 620;
+      stroke-dashoffset: 0;
+      filter: url(#pxhElectricGlow);
+      opacity: 0;
+      animation: pxhCurrentRun 3.2s cubic-bezier(.33, 0, .2, 1) infinite;
+    }
+
+    .pxh-trace-runner.is-slow {
+      animation-duration: 4.25s;
+      animation-delay: -1.2s;
+    }
+
+    .pxh-trace-runner.is-fast {
+      stroke-width: 2.6;
+      stroke-dasharray: 42 460;
+      animation-duration: 2.75s;
+      animation-delay: -.65s;
+    }
+
+    .pxh-caption {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      z-index: 6;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, .12);
+      background: rgba(2, 7, 17, .68);
+      backdrop-filter: blur(16px);
+    }
+
+    .pxh-caption strong,
+    .pxh-caption span {
+      display: block;
+    }
+
+    .pxh-caption strong {
+      color: #fff;
+      font-size: 16px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .pxh-caption span {
+      margin-top: 4px;
+      color: var(--px-muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .pxh-caption-price {
+      color: var(--px-warning);
+      font-size: 28px;
+      line-height: .9;
+      font-weight: 1000;
+      letter-spacing: -.06em;
+      white-space: nowrap;
+    }
+
+    @keyframes pxhGlowBreath {
+      0%, 100% { opacity: .34; }
+      44% { opacity: .82; }
+      58% { opacity: .48; }
+      72% { opacity: .92; }
+    }
+
+    @keyframes pxhCurrentRun {
+      0% {
+        opacity: 0;
+        stroke-dashoffset: 0;
+      }
+      8% { opacity: .9; }
+      22% { opacity: .36; }
+      36% { opacity: .84; }
+      58% { opacity: .14; }
+      100% {
+        opacity: 0;
+        stroke-dashoffset: -760;
+      }
+    }
+
+    @media (max-width: 1080px) {
+      .pxh-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .pxh-visual {
+        justify-self: center;
+        width: min(100%, 520px);
+      }
+
+      .pxh-figure {
+        min-height: 620px;
+        transform: none;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .pxh-hydrogel {
+        padding: 54px 0 72px;
+      }
+
+      .pxh-panel {
+        min-height: 0;
+        padding: 18px;
+        border-radius: 28px;
+      }
+
+      .pxh-title {
+        font-size: clamp(40px, 14vw, 70px);
+      }
+
+      .pxh-benefits {
+        grid-template-columns: 1fr;
+      }
+
+      .pxh-offer {
+        width: 100%;
+      }
+
+      .pxh-figure {
+        min-height: min(118vw, 610px);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pxh-title span,
+      .pxh-trace-soft,
+      .pxh-trace-core,
+      .pxh-trace-runner {
+        animation: none !important;
+      }
+    }
 </style>
 </head>
 
@@ -2923,6 +3339,85 @@
         </div>
       </div>
     </section>
+
+    <!-- ADDON HYDROGEL PROMO : BEGIN -->
+    <section class="px-section pxh-hydrogel" id="hydrogel" aria-labelledby="hydrogel-title">
+      <div class="px-shell">
+        <div class="pxh-panel px-reveal">
+          <div class="pxh-copy">
+            <p class="pxh-kicker"><span class="px-pulse"></span> Promotion de juin</p>
+            <h2 class="pxh-title" id="hydrogel-title">Hydrogel <span>anti-rayure</span></h2>
+            <p class="pxh-lead">
+              La nouvelle protection d'&eacute;cran Hydrogel Phone Xpress prot&egrave;ge votre smartphone
+              des rayures du quotidien avec une finition fine, discr&egrave;te et agr&eacute;able au toucher.
+            </p>
+
+            <div class="pxh-offer" aria-label="Offre Hydrogel du mois de juin">
+              <strong class="pxh-current-price">10&euro;</strong>
+              <span class="pxh-offer-copy">
+                <span>au lieu de <span class="pxh-old-price">19&euro;</span></span>
+                <span class="pxh-duration">offre valable tout le mois de juin</span>
+              </span>
+            </div>
+
+            <div class="pxh-benefits" aria-label="Avantages de la protection Hydrogel">
+              <div class="pxh-benefit">
+                <strong>Anti-rayure</strong>
+                <span>Aide &agrave; limiter les marques fines et frottements du quotidien.</span>
+              </div>
+              <div class="pxh-benefit">
+                <strong>Ultra fin</strong>
+                <span>Protection discr&egrave;te, sans sensation &eacute;paisse sur l'&eacute;cran.</span>
+              </div>
+              <div class="pxh-benefit">
+                <strong>Tactile fluide</strong>
+                <span>Conserve une navigation naturelle et confortable.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pxh-visual" aria-hidden="true">
+            <figure class="pxh-figure">
+              <img src="assets/phonexpress-hydrogel-hero-clean.png" alt="" width="1024" height="1536" loading="lazy" decoding="async" />
+              <div class="pxh-lightning">
+                <svg viewBox="0 0 1024 1536" preserveAspectRatio="xMidYMin slice">
+                  <defs>
+                    <filter id="pxhElectricBlur" x="-25%" y="-25%" width="150%" height="150%">
+                      <feGaussianBlur stdDeviation="11" />
+                    </filter>
+                    <filter id="pxhElectricGlow" x="-35%" y="-35%" width="170%" height="170%">
+                      <feGaussianBlur stdDeviation="4.2" result="coloredBlur" />
+                      <feMerge>
+                        <feMergeNode in="coloredBlur" />
+                        <feMergeNode in="SourceGraphic" />
+                      </feMerge>
+                    </filter>
+                  </defs>
+                  <g>
+                    <path class="pxh-trace-soft" d="M936 0 L908 112 L948 215 L886 362 L928 520 L848 680 L896 820 L824 1012 L860 1198 L790 1536" />
+                    <path class="pxh-trace-core" d="M936 0 L908 112 L948 215 L886 362 L928 520 L848 680 L896 820 L824 1012 L860 1198 L790 1536" />
+                    <path class="pxh-trace-runner" d="M936 0 L908 112 L948 215 L886 362 L928 520 L848 680 L896 820 L824 1012 L860 1198 L790 1536" />
+
+                    <path class="pxh-trace-soft" d="M344 1220 L420 1068 L524 936 L618 830 L704 708 L760 586" />
+                    <path class="pxh-trace-core" d="M344 1220 L420 1068 L524 936 L618 830 L704 708 L760 586" />
+                    <path class="pxh-trace-runner is-slow" d="M344 1220 L420 1068 L524 936 L618 830 L704 708 L760 586" />
+
+                  </g>
+                </svg>
+              </div>
+              <figcaption class="pxh-caption">
+                <span>
+                  <strong>Hydrogel</strong>
+                  <span>Protection &eacute;cran anti-rayure</span>
+                </span>
+                <span class="pxh-caption-price">10&euro;</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ADDON HYDROGEL PROMO : END -->
 
     <section class="px-marquee" aria-label="Services Phone Xpress">
       <div class="px-marquee-track">
